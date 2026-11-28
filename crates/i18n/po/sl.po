@@ -322,6 +322,12 @@ msgid "1. Copy the message below and send it to your organisation's administrato
 msgstr "1. Kopirajte spodnje sporočilo in ga pošljite skrbniku vaše organizacije."
 
 #. interface
+#: crates/ui-egui/src/account_setup.rs
+#, fuzzy
+msgid "1. Turn on 2-Step Verification for your Google account, if it isn't on yet: Google offers app passwords only then."
+msgstr "1. V svojem računu Google vklopite dvostopenjsko preverjanje, če še ni vklopljeno: Google ponuja gesla za aplikacije šele takrat."
+
+#. interface
 #: crates/ui-egui/src/calendar_view.rs
 #, fuzzy
 msgid "10 Minutes"
@@ -369,6 +375,12 @@ msgstr "2 tedna"
 msgid "2 years"
 msgstr "2 leti"
 
+#. interface
+#: crates/ui-egui/src/account_setup.rs
+#, fuzzy
+msgid "2. Open Google's App passwords page, sign in to the account you are adding, type a name such as MailCraft and press Create."
+msgstr "2. Odprite Googlovo stran Gesla za aplikacije, se prijavite v račun, ki ga dodajate, vnesite ime, na primer MailCraft, in pritisnite Ustvari."
+
 #. android
 #: apps/mailcraft-android/app/src/main/kotlin/work/mailcraft/android/AccountScreens.kt
 #, fuzzy
@@ -398,6 +410,12 @@ msgstr "3 dnevi"
 #, fuzzy
 msgid "3 months"
 msgstr "3 meseci"
+
+#. interface
+#: crates/ui-egui/src/account_setup.rs
+#, fuzzy
+msgid "3. Copy the 16-letter password Google shows, which it shows only once, and paste it here."
+msgstr "3. Kopirajte 16-črkovno geslo, ki ga Google pokaže samo enkrat, in ga prilepite sem."
 
 #. interface
 #: crates/ui-egui/src/calendar_view.rs
@@ -7395,6 +7413,12 @@ msgid "Horizontal Line"
 msgstr "Vodoravna črta"
 
 #. interface
+#: crates/ui-egui/src/account_setup.rs
+#, fuzzy
+msgid "How do I make an app password?"
+msgstr "Kako ustvarim geslo za aplikacijo?"
+
+#. interface
 #: crates/ui-egui/src/account_setup.rs crates/ui-egui/src/keep_offline.rs
 #, fuzzy
 msgid "How far back mail is kept in full on this computer. Older mail keeps its headers and a preview, and downloads when you open it. It stays on the server."
@@ -7441,6 +7465,12 @@ msgstr "Ikone"
 #, fuzzy
 msgid "If Google says the app is in testing, ask the developer to add your email as a test user. If your organization blocks MailCraft, ask its Workspace administrator. Those pages may not return here: cancel, then retry when access is granted or use an app password if allowed."
 msgstr "Če Google sporoči, da je aplikacija v preizkusnem načinu, prosite razvijalca, naj vaš e-poštni naslov doda kot preizkusnega uporabnika. Če vaša organizacija blokira MailCraft, se obrnite na njenega skrbnika Workspace. Te strani se morda ne vrnejo sem: pritisnite Prekliči, nato poskusite znova, ko je dostop odobren, ali uporabite geslo aplikacije, če je dovoljeno."
+
+#. interface
+#: crates/ui-egui/src/account_setup.rs
+#, fuzzy
+msgid "If Google's page says the setting isn't available, either 2-Step Verification is off or the account doesn't allow app passwords (some work or school accounts, accounts with Advanced Protection, and accounts whose 2-Step Verification uses only security keys)."
+msgstr "Če Googlova stran pravi, da nastavitev ni na voljo, je dvostopenjsko preverjanje izklopljeno ali pa račun gesel za aplikacije ne dovoljuje (nekateri delovni ali šolski računi, računi z Napredno zaščito in računi, katerih dvostopenjsko preverjanje uporablja samo varnostne ključe)."
 
 #. interface
 #: crates/ui-egui/src/account_setup/help.rs
@@ -12269,6 +12299,12 @@ msgstr "Odpri osnutek"
 #, fuzzy
 msgid "Open Draft Attachment"
 msgstr "Odpri prilogo osnutka"
+
+#. interface
+#: crates/ui-egui/src/account_setup.rs
+#, fuzzy
+msgid "Open Google's App passwords page"
+msgstr "Odpri Googlovo stran Gesla za aplikacije"
 
 #. interface
 #: crates/ui-egui/src/data_removal.rs

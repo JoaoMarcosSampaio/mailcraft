@@ -323,8 +323,9 @@ msgstr "1. დააკოპირეთ ქვემოთ მოცემუ�
 
 #. interface
 #: crates/ui-egui/src/account_setup.rs
+#, fuzzy
 msgid "1. Turn on 2-Step Verification for your Google account, if it isn't on yet: Google offers app passwords only then."
-msgstr ""
+msgstr "1. ჩართეთ თქვენი Google-ის ანგარიშისთვის ორსაფეხურიანი ვერიფიკაცია, თუ ის ჯერ ჩართული არ არის: Google აპლიკაციის პაროლებს მხოლოდ მაშინ გვთავაზობს."
 
 #. interface
 #: crates/ui-egui/src/calendar_view.rs
@@ -376,8 +377,9 @@ msgstr "2 წელი"
 
 #. interface
 #: crates/ui-egui/src/account_setup.rs
+#, fuzzy
 msgid "2. Open Google's App passwords page, sign in to the account you are adding, type a name such as MailCraft and press Create."
-msgstr ""
+msgstr "2. გახსენით Google-ის აპლიკაციის პაროლების გვერდი, შედით იმ ანგარიშში, რომელსაც ამატებთ, ჩაწერეთ სახელი, მაგალითად MailCraft, და დააჭირეთ შექმნას."
 
 #. android
 #: apps/mailcraft-android/app/src/main/kotlin/work/mailcraft/android/AccountScreens.kt
@@ -411,8 +413,9 @@ msgstr "3 თვე"
 
 #. interface
 #: crates/ui-egui/src/account_setup.rs
+#, fuzzy
 msgid "3. Copy the 16-letter password Google shows, which it shows only once, and paste it here."
-msgstr ""
+msgstr "3. დააკოპირეთ 16-ასოიანი პაროლი, რომელსაც Google მხოლოდ ერთხელ აჩვენებს, და ჩასვით აქ."
 
 #. interface
 #: crates/ui-egui/src/calendar_view.rs
@@ -7390,8 +7393,9 @@ msgstr "ჰორიზონტალური ხაზი"
 
 #. interface
 #: crates/ui-egui/src/account_setup.rs
+#, fuzzy
 msgid "How do I make an app password?"
-msgstr ""
+msgstr "როგორ შევქმნა აპლიკაციის პაროლი?"
 
 #. interface
 #: crates/ui-egui/src/account_setup.rs crates/ui-egui/src/keep_offline.rs
@@ -7443,8 +7447,9 @@ msgstr "თუ Google წერს, რომ აპლიკაცია ტე
 
 #. interface
 #: crates/ui-egui/src/account_setup.rs
+#, fuzzy
 msgid "If Google's page says the setting isn't available, either 2-Step Verification is off or the account doesn't allow app passwords (some work or school accounts, accounts with Advanced Protection, and accounts whose 2-Step Verification uses only security keys)."
-msgstr ""
+msgstr "თუ Google-ის გვერდი ამბობს, რომ პარამეტრი მიუწვდომელია, ან ორსაფეხურიანი ვერიფიკაცია გამორთულია, ან ანგარიში არ იძლევა აპლიკაციის პაროლების უფლებას (ზოგი სამსახურეობრივი ან სასკოლო ანგარიში, გაფართოებული დაცვის მქონე ანგარიშები და ანგარიშები, რომელთა ორსაფეხურიანი ვერიფიკაცია მხოლოდ უსაფრთხოების გასაღებებს იყენებს)."
 
 #. interface
 #: crates/ui-egui/src/account_setup/help.rs
@@ -12270,8 +12275,9 @@ msgstr "დრაფტის დანართის გახსნა"
 
 #. interface
 #: crates/ui-egui/src/account_setup.rs
+#, fuzzy
 msgid "Open Google's App passwords page"
-msgstr ""
+msgstr "გახსენით Google-ის აპლიკაციის პაროლების გვერდი"
 
 #. interface
 #: crates/ui-egui/src/data_removal.rs

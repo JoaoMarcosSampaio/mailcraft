@@ -326,8 +326,9 @@ msgstr "1. Másolja ki az alábbi üzenetet, és küldje el a szervezete rendsze
 
 #. interface
 #: crates/ui-egui/src/account_setup.rs
+#, fuzzy
 msgid "1. Turn on 2-Step Verification for your Google account, if it isn't on yet: Google offers app passwords only then."
-msgstr ""
+msgstr "1. Kapcsolja be a Google-fiókjában a kétlépéses azonosítást, ha még nincs bekapcsolva: a Google csak ekkor kínál alkalmazásjelszavakat."
 
 #. interface
 #: crates/ui-egui/src/calendar_view.rs
@@ -379,8 +380,9 @@ msgstr "2 év"
 
 #. interface
 #: crates/ui-egui/src/account_setup.rs
+#, fuzzy
 msgid "2. Open Google's App passwords page, sign in to the account you are adding, type a name such as MailCraft and press Create."
-msgstr ""
+msgstr "2. Nyissa meg a Google Alkalmazásjelszavak oldalát, jelentkezzen be a hozzáadni kívánt fiókba, adjon meg egy nevet, például MailCraft, és nyomja meg a Létrehozás gombot."
 
 #. android
 #: apps/mailcraft-android/app/src/main/kotlin/work/mailcraft/android/AccountScreens.kt
@@ -414,8 +416,9 @@ msgstr "3 hónap"
 
 #. interface
 #: crates/ui-egui/src/account_setup.rs
+#, fuzzy
 msgid "3. Copy the 16-letter password Google shows, which it shows only once, and paste it here."
-msgstr ""
+msgstr "3. Másolja ki a Google által csak egyszer megjelenített 16 betűs jelszót, és illessze be ide."
 
 #. interface
 #: crates/ui-egui/src/calendar_view.rs
@@ -7367,8 +7370,9 @@ msgstr "Vízszintes vonal"
 
 #. interface
 #: crates/ui-egui/src/account_setup.rs
+#, fuzzy
 msgid "How do I make an app password?"
-msgstr ""
+msgstr "Hogyan készítek alkalmazásjelszót?"
 
 #. interface
 #: crates/ui-egui/src/account_setup.rs crates/ui-egui/src/keep_offline.rs
@@ -7420,8 +7424,9 @@ msgstr "Ha a Google azt mondja, hogy az alkalmazás tesztelés alatt áll, kérj
 
 #. interface
 #: crates/ui-egui/src/account_setup.rs
+#, fuzzy
 msgid "If Google's page says the setting isn't available, either 2-Step Verification is off or the account doesn't allow app passwords (some work or school accounts, accounts with Advanced Protection, and accounts whose 2-Step Verification uses only security keys)."
-msgstr ""
+msgstr "Ha a Google oldala szerint a beállítás nem érhető el, vagy a kétlépéses azonosítás ki van kapcsolva, vagy a fiók nem engedélyezi az alkalmazásjelszavakat (egyes munkahelyi vagy iskolai fiókok, a Speciális védelmet használó fiókok, és azok a fiókok, amelyek kétlépéses azonosítása csak biztonsági kulcsokat használ)."
 
 #. interface
 #: crates/ui-egui/src/account_setup/help.rs
@@ -12242,8 +12247,9 @@ msgstr "Piszkozat mellékletének megnyitása"
 
 #. interface
 #: crates/ui-egui/src/account_setup.rs
+#, fuzzy
 msgid "Open Google's App passwords page"
-msgstr ""
+msgstr "A Google Alkalmazásjelszavak oldalának megnyitása"
 
 #. interface
 #: crates/ui-egui/src/data_removal.rs
