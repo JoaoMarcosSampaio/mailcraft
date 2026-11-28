@@ -1,1 +1,1 @@
-- Brazilian Portuguese as a preview language (Português (pré-visualização) in File › Options).
+- Brazilian Portuguese as a preview language (Português do Brasil (pré-visualização) in File › Options).

@@ -26,8 +26,10 @@ fn simplified_chinese_is_available_and_selected_for_matching_locales() {
         Lang::Dutch,
         Lang::Romanian,
         Lang::Polish,
+        Lang::Slovenian,
         Lang::Czech,
-        Lang::Portuguese,
+        Lang::PortugueseBrazil,
+        Lang::PortuguesePortugal,
         Lang::Pseudo,
     ] {
         assert_eq!(lang.supported_on(true), lang.supported_on(false), "{lang:?}");

@@ -22,9 +22,11 @@ internal val LANGUAGES: List<LanguageOption> = listOf(
     LanguageOption("ro", "Română"),
     LanguageOption("hu", "Magyar"),
     LanguageOption("pl", "Polski"),
+    LanguageOption("sl", "Slovenščina"),
     LanguageOption("cs", "Čeština"),
     LanguageOption("ka", "ქართული"),
-    LanguageOption("pt", "Português"),
+    LanguageOption("pt-BR", "Português (Brasil)"),
+    LanguageOption("pt-PT", "Português (Portugal)"),
 )
 
 /**
@@ -32,15 +34,22 @@ internal val LANGUAGES: List<LanguageOption> = listOf(
  * (The system has already put the owner's own choice, or its own language, into the configuration.)
  */
 internal fun coreLanguage(language: String?): String {
-    val code = language?.lowercase(java.util.Locale.ROOT)?.substringBefore('-')?.substringBefore('_')
+    val tag = language?.lowercase(java.util.Locale.ROOT)?.replace('_', '-')
+    // Portugal's Portuguese has a catalogue of its own; any other Portuguese is the Brazilian one.
+    if (tag == "pt-pt" || tag?.startsWith("pt-pt-") == true) return "pt-PT"
+    val code = tag?.substringBefore('-')
+    if (code == "pt") return "pt-BR"
     return LANGUAGES.firstOrNull { it.tag == code }?.tag ?: LANGUAGES.first().tag
 }
 
 /** Which of [LANGUAGES] the owner has chosen in the app (or the system's per-app setting): "" for none. */
 internal fun chosenTag(applicationLocales: List<String>): String =
     applicationLocales.firstNotNullOfOrNull { tag ->
-        val code = tag.substringBefore('-').lowercase(java.util.Locale.ROOT)
-        LANGUAGES.firstOrNull { it.tag == code }?.tag
+        val full = tag.lowercase(java.util.Locale.ROOT).replace('_', '-')
+        val code = full.substringBefore('-')
+        // An exact tag first (`pt-PT`, `pt-BR`), then the language alone (bare `pt` is `pt-BR`).
+        LANGUAGES.firstOrNull { it.tag.lowercase(java.util.Locale.ROOT) == full }?.tag
+            ?: if (code == "pt") "pt-BR" else LANGUAGES.firstOrNull { it.tag == code }?.tag
     }.orEmpty()
 
 /**
@@ -60,7 +69,7 @@ internal object LanguageChoice {
     }
 
     /** The language of the window's own configuration, which is the owner's choice when there is one. */
-    fun inUse(locales: LocaleList): String = coreLanguage(locales.takeIf { !it.isEmpty }?.get(0)?.language)
+    fun inUse(locales: LocaleList): String = coreLanguage(locales.takeIf { !it.isEmpty }?.get(0)?.toLanguageTag())
 
     /**
      * The language in use with no window open (a background run started cold): the owner's saved
