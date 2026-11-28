@@ -20,6 +20,7 @@ fn brazilian_portuguese_is_offered_by_its_own_name_and_chosen_for_its_locales() 
     // A bare `pt` is the Brazilian catalogue, as it was before European Portuguese existed.
     assert_eq!(Lang::from_pref("pt", None), Lang::PortugueseBrazil);
     assert_eq!(Lang::from_code("pt-AO"), Some(Lang::PortugueseBrazil));
+    assert_eq!(Lang::from_code("pt-BR-x-pt"), Some(Lang::PortugueseBrazil));
 }
 
 #[test]
@@ -34,6 +35,7 @@ fn european_portuguese_is_offered_by_its_own_name_and_chosen_for_portugal() {
     assert_eq!(Lang::from_pref("auto", Some("pt-PT")), Lang::PortuguesePortugal);
     assert_eq!(Lang::from_pref("pt-PT", None), Lang::PortuguesePortugal);
     assert_eq!(Lang::from_code("pt_PT"), Some(Lang::PortuguesePortugal));
+    assert_eq!(Lang::from_code("pt-Latn-PT"), Some(Lang::PortuguesePortugal));
 }
 
 #[test]

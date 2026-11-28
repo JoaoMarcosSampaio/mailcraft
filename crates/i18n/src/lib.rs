@@ -171,7 +171,7 @@ impl Lang {
             "ka" => Some(Lang::Georgian),
             // `pt` alone, or with a region other than Portugal's, is Brazilian Portuguese: the
             // larger community, and the catalogue this language began with.
-            "pt" => Some(if tag.split(['-', '_']).skip(1).any(|part| part.eq_ignore_ascii_case("PT")) {
+            "pt" => Some(if tag.split(['-', '_']).skip(1).take_while(|part| part.len() > 1).any(|part| part.eq_ignore_ascii_case("PT")) {
                 Lang::PortuguesePortugal
             } else {
                 Lang::PortugueseBrazil
