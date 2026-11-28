@@ -322,6 +322,12 @@ msgid "1. Copy the message below and send it to your organisation's administrato
 msgstr "1. Zkopírujte níže uvedenou zprávu a pošlete ji správci vaší organizace."
 
 #. interface
+#: crates/ui-egui/src/account_setup.rs
+#, fuzzy
+msgid "1. Turn on 2-Step Verification for your Google account, if it isn't on yet: Google offers app passwords only then."
+msgstr "1. Pokud ještě není zapnuté, zapněte ve svém účtu Google dvoufázové ověření: hesla aplikací Google nabízí jen s ním."
+
+#. interface
 #: crates/ui-egui/src/calendar_view.rs
 #, fuzzy
 msgid "10 Minutes"
@@ -369,6 +375,12 @@ msgstr "2 týdny"
 msgid "2 years"
 msgstr "2 roky"
 
+#. interface
+#: crates/ui-egui/src/account_setup.rs
+#, fuzzy
+msgid "2. Open Google's App passwords page, sign in to the account you are adding, type a name such as MailCraft and press Create."
+msgstr "2. Otevřete stránku Google Hesla aplikací, přihlaste se k účtu, který přidáváte, zadejte název, například MailCraft, a stiskněte Vytvořit."
+
 #. android
 #: apps/mailcraft-android/app/src/main/kotlin/work/mailcraft/android/AccountScreens.kt
 #, fuzzy
@@ -398,6 +410,12 @@ msgstr "3 dny"
 #, fuzzy
 msgid "3 months"
 msgstr "3 měsíce"
+
+#. interface
+#: crates/ui-egui/src/account_setup.rs
+#, fuzzy
+msgid "3. Copy the 16-letter password Google shows, which it shows only once, and paste it here."
+msgstr "3. Zkopírujte 16písmenné heslo, které Google zobrazí jen jednou, a vložte ho sem."
 
 #. interface
 #: crates/ui-egui/src/calendar_view.rs
@@ -7388,6 +7406,12 @@ msgid "Horizontal Line"
 msgstr "Vodorovná čára"
 
 #. interface
+#: crates/ui-egui/src/account_setup.rs
+#, fuzzy
+msgid "How do I make an app password?"
+msgstr "Jak vytvořím heslo aplikace?"
+
+#. interface
 #: crates/ui-egui/src/account_setup.rs crates/ui-egui/src/keep_offline.rs
 #, fuzzy
 msgid "How far back mail is kept in full on this computer. Older mail keeps its headers and a preview, and downloads when you open it. It stays on the server."
@@ -7434,6 +7458,12 @@ msgstr "Ikony"
 #, fuzzy
 msgid "If Google says the app is in testing, ask the developer to add your email as a test user. If your organization blocks MailCraft, ask its Workspace administrator. Those pages may not return here: cancel, then retry when access is granted or use an app password if allowed."
 msgstr "Pokud Google hlásí, že je aplikace v testování, požádejte vývojáře, aby váš e-mail přidal jako testovacího uživatele. Pokud vaše organizace MailCraft blokuje, obraťte se na jejího správce Workspace. Tyto stránky se sem nemusí vrátit: zrušte to a zkuste znovu, až bude přístup udělen, nebo použijte heslo aplikace, je-li povoleno."
+
+#. interface
+#: crates/ui-egui/src/account_setup.rs
+#, fuzzy
+msgid "If Google's page says the setting isn't available, either 2-Step Verification is off or the account doesn't allow app passwords (some work or school accounts, accounts with Advanced Protection, and accounts whose 2-Step Verification uses only security keys)."
+msgstr "Pokud stránka Google hlásí, že nastavení není dostupné, je buď vypnuté dvoufázové ověření, nebo účet hesla aplikací nepovoluje (některé pracovní a školní účty, účty s Pokročilou ochranou a účty, jejichž dvoufázové ověření používá jen bezpečnostní klíče)."
 
 #. interface
 #: crates/ui-egui/src/account_setup/help.rs
@@ -12261,6 +12291,12 @@ msgstr "Otevřít koncept"
 #, fuzzy
 msgid "Open Draft Attachment"
 msgstr "Otevřít přílohu konceptu"
+
+#. interface
+#: crates/ui-egui/src/account_setup.rs
+#, fuzzy
+msgid "Open Google's App passwords page"
+msgstr "Otevřít stránku Google Hesla aplikací"
 
 #. interface
 #: crates/ui-egui/src/data_removal.rs
