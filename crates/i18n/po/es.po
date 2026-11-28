@@ -2410,7 +2410,7 @@ msgstr "Datos adjuntos"
 #: crates/ui-egui/src/attachment_open.rs crates/ui-egui/src/compose.rs
 #, fuzzy
 msgid "Attachments can't be opened here."
-msgstr "Los datos adjuntos no se pueden abrir aquí."
+msgstr "Los archivos adjuntos no se pueden abrir aquí."
 
 #. interface
 #: crates/ui-egui/src/attachment_open.rs
@@ -12226,7 +12226,7 @@ msgstr "Abrir borrador"
 #: crates/ui-egui/src/lib.rs
 #, fuzzy
 msgid "Open Draft Attachment"
-msgstr "Abrir datos adjuntos del borrador"
+msgstr "Abrir adjunto del borrador"
 
 #. interface
 #: crates/ui-egui/src/data_removal.rs

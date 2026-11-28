@@ -2300,7 +2300,7 @@ msgstr "Anlagen"
 #: crates/ui-egui/src/attachment_open.rs crates/ui-egui/src/compose.rs
 #, fuzzy
 msgid "Attachments can't be opened here."
-msgstr "Anlagen können hier nicht geöffnet werden."
+msgstr "Anhänge können hier nicht geöffnet werden."
 
 #. interface
 #: crates/ui-egui/src/attachment_open.rs
@@ -11505,7 +11505,7 @@ msgstr "Entwurf öffnen"
 #: crates/ui-egui/src/lib.rs
 #, fuzzy
 msgid "Open Draft Attachment"
-msgstr "Entwurfsanlage öffnen"
+msgstr "Entwurfsanhang öffnen"
 
 #. interface
 #: crates/ui-egui/src/data_removal.rs

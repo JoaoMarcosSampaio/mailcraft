@@ -2412,7 +2412,7 @@ msgstr "Přílohy"
 #: crates/ui-egui/src/attachment_open.rs crates/ui-egui/src/compose.rs
 #, fuzzy
 msgid "Attachments can't be opened here."
-msgstr "Přílohy se zde nedají otevřít."
+msgstr "Přílohy zde nelze otevřít."
 
 #. interface
 #: crates/ui-egui/src/attachment_open.rs
@@ -18180,7 +18180,7 @@ msgstr "Stahování bylo zrušeno."
 #: crates/ui-egui/src/attachment_open.rs
 #, fuzzy
 msgid "The draft isn't open any more"
-msgstr "Koncept už není otevřen"
+msgstr "Koncept již není otevřený"
 
 #. interface
 #: crates/ui-egui/src/dialogs.rs
@@ -28306,9 +28306,9 @@ msgstr "• komu: {to}, předmět „{subject}“"
 #, fuzzy
 msgid "…and {n} more — type to narrow it"
 msgid_plural "…and {n} more — type to narrow it"
-msgstr[0] "…a ještě {n} — zadáním zúžíte výběr"
-msgstr[1] "…a ještě {n} — zadáním zúžíte výběr"
-msgstr[2] "…a ještě {n} — zadáním zúžíte výběr"
+msgstr[0] "…and {n} more — type to narrow it"
+msgstr[1] "…and {n} more — type to narrow it"
+msgstr[2] ""
 
 #. interface
 #: crates/ui-egui/src/credits.rs

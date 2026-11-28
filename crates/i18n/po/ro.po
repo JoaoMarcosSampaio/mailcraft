@@ -12258,7 +12258,7 @@ msgstr "Deschidere ciornă"
 #: crates/ui-egui/src/lib.rs
 #, fuzzy
 msgid "Open Draft Attachment"
-msgstr "Deschidere atașament ciornă"
+msgstr "Deschide atașamentul ciornei"
 
 #. interface
 #: crates/ui-egui/src/data_removal.rs
@@ -28301,9 +28301,9 @@ msgstr "• către {to}, subiect „{subject}”"
 #, fuzzy
 msgid "…and {n} more — type to narrow it"
 msgid_plural "…and {n} more — type to narrow it"
-msgstr[0] "…și încă {n} — tastați pentru a restrânge lista"
-msgstr[1] "…și încă {n} — tastați pentru a restrânge lista"
-msgstr[2] "…și încă {n} — tastați pentru a restrânge lista"
+msgstr[0] "…and {n} more — type to narrow it"
+msgstr[1] "…and {n} more — type to narrow it"
+msgstr[2] ""
 
 #. interface
 #: crates/ui-egui/src/credits.rs
