@@ -322,6 +322,12 @@ msgid "1. Copy the message below and send it to your organisation's administrato
 msgstr "1. Copie a mensagem abaixo e envie ao administrador da sua organização."
 
 #. interface
+#: crates/ui-egui/src/account_setup.rs
+#, fuzzy
+msgid "1. Turn on 2-Step Verification for your Google account, if it isn't on yet: Google offers app passwords only then."
+msgstr "1. Ative a verificação em duas etapas na sua conta do Google, se ainda não estiver ativada: o Google só oferece senhas de app depois disso."
+
+#. interface
 #: crates/ui-egui/src/calendar_view.rs
 #, fuzzy
 msgid "10 Minutes"
@@ -369,6 +375,12 @@ msgstr "2 semanas"
 msgid "2 years"
 msgstr "2 anos"
 
+#. interface
+#: crates/ui-egui/src/account_setup.rs
+#, fuzzy
+msgid "2. Open Google's App passwords page, sign in to the account you are adding, type a name such as MailCraft and press Create."
+msgstr "2. Abra a página de Senhas de app do Google, entre na conta que você está adicionando, digite um nome como MailCraft e pressione Criar."
+
 #. android
 #: apps/mailcraft-android/app/src/main/kotlin/work/mailcraft/android/AccountScreens.kt
 #, fuzzy
@@ -398,6 +410,12 @@ msgstr "3 dias"
 #, fuzzy
 msgid "3 months"
 msgstr "3 meses"
+
+#. interface
+#: crates/ui-egui/src/account_setup.rs
+#, fuzzy
+msgid "3. Copy the 16-letter password Google shows, which it shows only once, and paste it here."
+msgstr "3. Copie a senha de 16 letras que o Google mostra (exibida apenas uma vez) e cole-a aqui."
 
 #. interface
 #: crates/ui-egui/src/calendar_view.rs
@@ -1678,6 +1696,12 @@ msgstr "Um endereço do qual esta conta pode enviar"
 #, fuzzy
 msgid "An address with no domain."
 msgstr "Um endereço sem domínio."
+
+#. interface
+#: crates/ui-egui/src/people_view.rs
+#, fuzzy
+msgid "An agent made this contact or gave it an address. Until you edit it, its addresses don't bring pictures in mail from your contacts."
+msgstr "Um agente criou este contato ou deu um endereço a ele. Até que você o edite, os endereços dele não baixam imagens em e-mails dos seus contatos."
 
 #. interface
 #: crates/ui-egui/src/agent_gate.rs
@@ -5212,6 +5236,12 @@ msgstr "Baixar Imagens"
 #. interface
 #: crates/ui-egui/src/dialogs.rs
 #, fuzzy
+msgid "Download Pictures from Contacts"
+msgstr "Baixar Imagens de Contatos"
+
+#. interface
+#: crates/ui-egui/src/dialogs.rs
+#, fuzzy
 msgid "Download Pictures in All Mail"
 msgstr "Baixar Imagens em Todo o Email"
 
@@ -5220,6 +5250,18 @@ msgstr "Baixar Imagens em Todo o Email"
 #, fuzzy
 msgid "Download Pictures in Mail Automatically"
 msgstr "Baixar Imagens do Email Automaticamente"
+
+#. command label
+#: crates/ui-egui/src/lib.rs
+#, fuzzy
+msgid "Download Pictures in Mail from Contacts"
+msgstr "Baixar Imagens em E-mails de Contatos"
+
+#. interface
+#: crates/ui-egui/src/dialogs.rs
+#, fuzzy
+msgid "Download from contacts"
+msgstr "Baixar dos contatos"
 
 #. interface
 #: crates/ui-egui/src/dialogs.rs
@@ -5256,6 +5298,12 @@ msgstr "Baixar imagens em toda mensagem sem perguntar, exceto no Lixo Eletrônic
 #, fuzzy
 msgid "Download pictures in mail automatically"
 msgstr "Baixar imagens no email automaticamente"
+
+#. interface
+#: crates/ui-egui/src/reading/remote.rs
+#, fuzzy
+msgid "Download pictures in mail from people in my contacts"
+msgstr "Baixar imagens em e-mails de pessoas nos meus contatos"
 
 #. interface
 #: crates/ui-egui/src/reading/signature.rs
@@ -7372,6 +7420,12 @@ msgid "Horizontal Line"
 msgstr "Linha Horizontal"
 
 #. interface
+#: crates/ui-egui/src/account_setup.rs
+#, fuzzy
+msgid "How do I make an app password?"
+msgstr "Como criar uma senha de app?"
+
+#. interface
 #: crates/ui-egui/src/account_setup.rs crates/ui-egui/src/keep_offline.rs
 #, fuzzy
 msgid "How far back mail is kept in full on this computer. Older mail keeps its headers and a preview, and downloads when you open it. It stays on the server."
@@ -7418,6 +7472,12 @@ msgstr "Ícones"
 #, fuzzy
 msgid "If Google says the app is in testing, ask the developer to add your email as a test user. If your organization blocks MailCraft, ask its Workspace administrator. Those pages may not return here: cancel, then retry when access is granted or use an app password if allowed."
 msgstr "Se o Google disser que o app está em teste, peça ao desenvolvedor para adicionar seu email como testador. Se sua organização bloquear o MailCraft, peça ao administrador do Workspace. Essas páginas podem não voltar aqui: cancele, depois tente quando o acesso for concedido ou use senha de app se permitido."
+
+#. interface
+#: crates/ui-egui/src/account_setup.rs
+#, fuzzy
+msgid "If Google's page says the setting isn't available, either 2-Step Verification is off or the account doesn't allow app passwords (some work or school accounts, accounts with Advanced Protection, and accounts whose 2-Step Verification uses only security keys)."
+msgstr "Se a página do Google disser que a configuração não está disponível, a verificação em duas etapas está desativada ou a conta não permite senhas de app (algumas contas de trabalho ou escolares, contas com Proteção Avançada e contas cuja verificação em duas etapas usa apenas chaves de segurança)."
 
 #. interface
 #: crates/ui-egui/src/account_setup/help.rs
@@ -12242,6 +12302,12 @@ msgid "Open Draft Attachment"
 msgstr "Abrir Anexo do Rascunho"
 
 #. interface
+#: crates/ui-egui/src/account_setup.rs
+#, fuzzy
+msgid "Open Google's App passwords page"
+msgstr "Abrir a página de Senhas de app do Google"
+
+#. interface
 #: crates/ui-egui/src/data_removal.rs
 #, fuzzy
 msgid "Open MailCraft's data folder"
@@ -12985,6 +13051,12 @@ msgstr "Imagens não são incluídas em mensagens de texto simples. Alterne para
 msgid "Pictures in mail"
 msgstr "Imagens no email"
 
+#. interface
+#: crates/ui-egui/src/reading/remote.rs
+#, fuzzy
+msgid "Pictures in mail from an address in your contacts are downloaded without asking: that address exactly, only when your mail server confirms the message came from that address's domain (it can't confirm the address itself), and never in Junk E-mail. Each such sender's server learns that you opened the message, when, and from which internet address. A contact an agent made or gave an address to doesn't count until you edit it."
+msgstr "Imagens em e-mails de um endereço nos seus contatos são baixadas sem perguntar: exatamente esse endereço, apenas quando o seu servidor de e-mail confirma que a mensagem veio do domínio desse endereço (não pode confirmar o endereço em si), e nunca em Lixo Eletrônico. O servidor de cada remetente fica sabendo que você abriu a mensagem, quando e de qual endereço da internet. Um contato que um agente criou ou ao qual deu um endereço não conta até que você o edite."
+
 #. android, interface
 #: apps/mailcraft-android/app/src/main/kotlin/work/mailcraft/android/PicturesBanner.kt crates/ui-egui/src/reading/remote.rs
 #, fuzzy
@@ -13008,6 +13080,12 @@ msgstr "Imagens na web não são baixadas para uma mensagem que não está na su
 #, fuzzy
 msgid "Pictures on the web will be downloaded in every message you open. Each sender's server then learns when you opened the message and from which internet address."
 msgstr "Imagens na web serão baixadas em cada mensagem que você abrir. O servidor de cada remetente então saberá quando você abriu a mensagem e de qual endereço de internet."
+
+#. interface
+#: crates/ui-egui/src/dialogs.rs
+#, fuzzy
+msgid "Pictures on the web will be downloaded in mail from the people in your contacts. Their servers then learn when you opened the message and from which internet address."
+msgstr "Imagens na web serão baixadas em e-mails das pessoas nos seus contatos. Os servidores delas ficam sabendo quando você abriu a mensagem e de qual endereço da internet."
 
 #. interface
 #: crates/ui-egui/src/signatures.rs
@@ -22044,6 +22122,12 @@ msgstr "Você não tem acesso ao calendário de {address}. Precisam compartilhar
 #, fuzzy
 msgid "You don't have access to {address}. If access was just given, try again in an hour."
 msgstr "Você não tem acesso a {address}. Se o acesso acabou de ser dado, tente de novo em uma hora."
+
+#. interface
+#: crates/ui-egui/src/reading/remote.rs
+#, fuzzy
+msgid "You download pictures from your contacts, but the mail server didn't confirm that this message came from this one, so it is asked first."
+msgstr "Você baixa imagens dos seus contatos, mas o servidor de e-mail não confirmou que esta mensagem veio deste contato, então é perguntado antes."
 
 #. interface
 #: crates/ui-egui/src/signatures.rs
