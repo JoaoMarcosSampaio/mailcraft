@@ -144,8 +144,8 @@ msgstr "„{title}” is geannuleerd en kan dus niet aan de selectie worden toeg
 #. what a command says
 #: crates/engine/src/undo.rs
 #, fuzzy
-msgid "'{subject}' isn't moved: its mail server has moved or removed it since, or the folder it was to go to is gone."
-msgstr "‘{subject}’ wordt niet verplaatst: de mailserver heeft het bericht sindsdien verplaatst of verwijderd, of de doelmap bestaat niet meer."
+msgid "'{subject}' isn't moved: its mail server has moved or removed it since, or the folder it was to go to is gone or won't take it."
+msgstr "‘{subject}’ wordt niet verplaatst: de mailserver heeft het bericht sindsdien verplaatst of verwijderd, of de doelmap bestaat niet meer of neemt het niet aan."
 
 #. what a command says
 #: crates/engine/src/cmd/graph_send.rs
@@ -26655,10 +26655,10 @@ msgstr[1] "{n} berichten zijn al hier en worden weggelaten"
 #. what a command says
 #: crates/engine/src/undo.rs
 #, fuzzy
-msgid "{n} message isn't moved: its mail server has moved or removed it since, or the folder it was to go to is gone."
-msgid_plural "{n} messages aren't moved: their mail server has moved or removed them since, or the folders they were to go to are gone."
-msgstr[0] "{n} bericht wordt niet verplaatst: de mailserver heeft het sindsdien verplaatst of verwijderd, of de doelmap bestaat niet meer."
-msgstr[1] "{n} berichten worden niet verplaatst: de mailserver heeft ze sindsdien verplaatst of verwijderd, of de doelmappen bestaan niet meer."
+msgid "{n} message isn't moved: its mail server has moved or removed it since, or the folder it was to go to is gone or won't take it."
+msgid_plural "{n} messages aren't moved: their mail server has moved or removed them since, or the folders they were to go to are gone or won't take them."
+msgstr[0] "{n} bericht wordt niet verplaatst: de mailserver heeft het sindsdien verplaatst of verwijderd, of de doelmap bestaat niet meer of neemt het niet aan."
+msgstr[1] "{n} berichten worden niet verplaatst: de mailserver heeft ze sindsdien verplaatst of verwijderd, of de doelmappen bestaan niet meer of nemen ze niet aan."
 
 #. android
 #: apps/mailcraft-android/app/src/main/kotlin/work/mailcraft/android/MailListScreen.kt

@@ -143,8 +143,8 @@ msgstr "„{title}“ ist abgesagt und kann daher nicht zur Auswahl hinzugefügt
 #. what a command says
 #: crates/engine/src/undo.rs
 #, fuzzy
-msgid "'{subject}' isn't moved: its mail server has moved or removed it since, or the folder it was to go to is gone."
-msgstr "„{subject}“ wird nicht verschoben: Der Mailserver hat die Nachricht inzwischen verschoben oder entfernt, oder ihr Zielordner existiert nicht mehr."
+msgid "'{subject}' isn't moved: its mail server has moved or removed it since, or the folder it was to go to is gone or won't take it."
+msgstr "„{subject}“ wird nicht verschoben: Der Mailserver hat die Nachricht inzwischen verschoben oder entfernt, oder ihr Zielordner existiert nicht mehr oder nimmt sie nicht an."
 
 #. what a command says
 #: crates/engine/src/cmd/graph_send.rs
@@ -25756,10 +25756,10 @@ msgstr[1] "{n} Nachrichten sind bereits vorhanden und werden ausgelassen"
 #. what a command says
 #: crates/engine/src/undo.rs
 #, fuzzy
-msgid "{n} message isn't moved: its mail server has moved or removed it since, or the folder it was to go to is gone."
-msgid_plural "{n} messages aren't moved: their mail server has moved or removed them since, or the folders they were to go to are gone."
-msgstr[0] "{n} Nachricht wird nicht verschoben: Der Mailserver hat sie inzwischen verschoben oder entfernt, oder ihr Zielordner existiert nicht mehr."
-msgstr[1] "{n} Nachrichten werden nicht verschoben: Der Mailserver hat sie inzwischen verschoben oder entfernt, oder ihre Zielordner existieren nicht mehr."
+msgid "{n} message isn't moved: its mail server has moved or removed it since, or the folder it was to go to is gone or won't take it."
+msgid_plural "{n} messages aren't moved: their mail server has moved or removed them since, or the folders they were to go to are gone or won't take them."
+msgstr[0] "{n} Nachricht wird nicht verschoben: Der Mailserver hat sie inzwischen verschoben oder entfernt, oder ihr Zielordner existiert nicht mehr oder nimmt sie nicht an."
+msgstr[1] "{n} Nachrichten werden nicht verschoben: Der Mailserver hat sie inzwischen verschoben oder entfernt, oder ihre Zielordner existieren nicht mehr oder nehmen sie nicht an."
 
 #. android
 #: apps/mailcraft-android/app/src/main/kotlin/work/mailcraft/android/MailListScreen.kt

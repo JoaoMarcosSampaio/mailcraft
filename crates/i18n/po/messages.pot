@@ -120,7 +120,7 @@ msgstr ""
 
 #. what a command says
 #: crates/engine/src/undo.rs
-msgid "'{subject}' isn't moved: its mail server has moved or removed it since, or the folder it was to go to is gone."
+msgid "'{subject}' isn't moved: its mail server has moved or removed it since, or the folder it was to go to is gone or won't take it."
 msgstr ""
 
 #. what a command says
@@ -22687,8 +22687,8 @@ msgstr[1] ""
 
 #. what a command says
 #: crates/engine/src/undo.rs
-msgid "{n} message isn't moved: its mail server has moved or removed it since, or the folder it was to go to is gone."
-msgid_plural "{n} messages aren't moved: their mail server has moved or removed them since, or the folders they were to go to are gone."
+msgid "{n} message isn't moved: its mail server has moved or removed it since, or the folder it was to go to is gone or won't take it."
+msgid_plural "{n} messages aren't moved: their mail server has moved or removed them since, or the folders they were to go to are gone or won't take them."
 msgstr[0] ""
 msgstr[1] ""
 

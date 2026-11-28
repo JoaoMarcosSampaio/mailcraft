@@ -144,8 +144,8 @@ msgstr "»{title}« je preklican, zato ga ni mogoče dodati izboru."
 #. what a command says
 #: crates/engine/src/undo.rs
 #, fuzzy
-msgid "'{subject}' isn't moved: its mail server has moved or removed it since, or the folder it was to go to is gone."
-msgstr "'{subject}' ni premaknjeno: poštni strežnik ga je medtem premaknil ali odstranil ali pa mape, v katero naj bi šlo, ni več."
+msgid "'{subject}' isn't moved: its mail server has moved or removed it since, or the folder it was to go to is gone or won't take it."
+msgstr "'{subject}' ni premaknjeno: poštni strežnik ga je medtem premaknil ali odstranil ali pa mape, v katero naj bi šlo, ni več ali ga ne sprejme."
 
 #. what a command says
 #: crates/engine/src/cmd/graph_send.rs
@@ -27538,12 +27538,12 @@ msgstr[3] "{n} sporočil je že tukaj in je izpuščenih"
 #. what a command says
 #: crates/engine/src/undo.rs
 #, fuzzy
-msgid "{n} message isn't moved: its mail server has moved or removed it since, or the folder it was to go to is gone."
-msgid_plural "{n} messages aren't moved: their mail server has moved or removed them since, or the folders they were to go to are gone."
-msgstr[0] "{n} sporočilo ni premaknjeno: poštni strežnik ga je medtem premaknil ali odstranil ali pa mape, v katero naj bi šlo, ni več."
-msgstr[1] "{n} sporočili nista premaknjeni: poštni strežnik ju je medtem premaknil ali odstranil ali pa map, v kateri naj bi šli, ni več."
-msgstr[2] "{n} sporočila niso premaknjena: poštni strežnik jih je medtem premaknil ali odstranil ali pa map, v katere naj bi šla, ni več."
-msgstr[3] "{n} sporočil ni premaknjenih: poštni strežnik jih je medtem premaknil ali odstranil ali pa map, v katere naj bi šla, ni več."
+msgid "{n} message isn't moved: its mail server has moved or removed it since, or the folder it was to go to is gone or won't take it."
+msgid_plural "{n} messages aren't moved: their mail server has moved or removed them since, or the folders they were to go to are gone or won't take them."
+msgstr[0] "{n} sporočilo ni premaknjeno: poštni strežnik ga je medtem premaknil ali odstranil ali pa mape, v katero naj bi šlo, ni več ali ga ne sprejme."
+msgstr[1] "{n} sporočili nista premaknjeni: poštni strežnik ju je medtem premaknil ali odstranil ali pa map, v kateri naj bi šli, ni več ali ju ne sprejmejo."
+msgstr[2] "{n} sporočila niso premaknjena: poštni strežnik jih je medtem premaknil ali odstranil ali pa map, v katere naj bi šla, ni več ali jih ne sprejmejo."
+msgstr[3] "{n} sporočil ni premaknjenih: poštni strežnik jih je medtem premaknil ali odstranil ali pa map, v katere naj bi šla, ni več ali jih ne sprejmejo."
 
 #. android
 #: apps/mailcraft-android/app/src/main/kotlin/work/mailcraft/android/MailListScreen.kt

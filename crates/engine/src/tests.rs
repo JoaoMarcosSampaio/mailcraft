@@ -1676,7 +1676,10 @@ mod two_way {
         assert!(s.mailbox.message(one).is_none(), "it stays gone");
         assert!(request(&s, a).ops.is_empty());
         // And the owner is told that the undo didn't reach it (#1884).
-        assert_eq!(s.undo_said(), ["'Two' isn't moved: its mail server has moved or removed it since, or the folder it was to go to is gone."]);
+        assert_eq!(
+            s.undo_said(),
+            ["'Two' isn't moved: its mail server has moved or removed it since, or the folder it was to go to is gone or won't take it."]
+        );
     }
 
     /// Two messages deleted at once and undone after the run took them, one of them from a folder
@@ -1701,7 +1704,10 @@ mod two_way {
         let filed_now = s.mailbox.message(filed).unwrap();
         assert_eq!((filed_now.folder, filed_now.uid), (deleted, 5), "where the server has it");
         // The owner is told of that one alone (#1884).
-        assert_eq!(s.undo_said(), ["'Filed' isn't moved: its mail server has moved or removed it since, or the folder it was to go to is gone."]);
+        assert_eq!(
+            s.undo_said(),
+            ["'Filed' isn't moved: its mail server has moved or removed it since, or the folder it was to go to is gone or won't take it."]
+        );
         assert_eq!(s.mailbox.message(two).map(|m| m.folder), Some(inbox));
         assert_eq!(
             request(&s, a).ops,

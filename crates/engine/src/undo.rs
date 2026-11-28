@@ -475,11 +475,11 @@ impl Said {
             &mut lines,
             &self.not_back,
             "subject",
-            lang.t("'{subject}' isn't moved: its mail server has moved or removed it since, or the folder it was to go to is gone."),
+            lang.t("'{subject}' isn't moved: its mail server has moved or removed it since, or the folder it was to go to is gone or won't take it."),
             lang.tn(
                 n(&self.not_back),
-                "{n} message isn't moved: its mail server has moved or removed it since, or the folder it was to go to is gone.",
-                "{n} messages aren't moved: their mail server has moved or removed them since, or the folders they were to go to are gone.",
+                "{n} message isn't moved: its mail server has moved or removed it since, or the folder it was to go to is gone or won't take it.",
+                "{n} messages aren't moved: their mail server has moved or removed them since, or the folders they were to go to are gone or won't take them.",
             ),
         );
         lines

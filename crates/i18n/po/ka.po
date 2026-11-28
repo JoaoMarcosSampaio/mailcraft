@@ -144,8 +144,8 @@ msgstr "„{title}“ გაუქმებულია, ამიტომ მ�
 #. what a command says
 #: crates/engine/src/undo.rs
 #, fuzzy
-msgid "'{subject}' isn't moved: its mail server has moved or removed it since, or the folder it was to go to is gone."
-msgstr "„{subject}“ არ გადაიტანება: ფოსტის სერვერმა ის მას შემდეგ გადაიტანა ან წაშალა, ან სამიზნე საქაღალდე აღარ არსებობს."
+msgid "'{subject}' isn't moved: its mail server has moved or removed it since, or the folder it was to go to is gone or won't take it."
+msgstr "„{subject}“ არ გადაიტანება: ფოსტის სერვერმა ის მას შემდეგ გადაიტანა ან წაშალა, ან სამიზნე საქაღალდე აღარ არსებობს ან არ იღებს მას."
 
 #. what a command says
 #: crates/engine/src/cmd/graph_send.rs
@@ -27329,10 +27329,10 @@ msgstr[1] "უკვე აქაა და გამოტოვებული
 #. what a command says
 #: crates/engine/src/undo.rs
 #, fuzzy
-msgid "{n} message isn't moved: its mail server has moved or removed it since, or the folder it was to go to is gone."
-msgid_plural "{n} messages aren't moved: their mail server has moved or removed them since, or the folders they were to go to are gone."
-msgstr[0] "{n} წერილი არ გადაიტანება: ფოსტის სერვერმა ის მას შემდეგ გადაიტანა ან წაშალა, ან სამიზნე საქაღალდე აღარ არსებობს."
-msgstr[1] "{n} წერილი არ გადაიტანება: ფოსტის სერვერმა ისინი მას შემდეგ გადაიტანა ან წაშალა, ან სამიზნე საქაღალდეები აღარ არსებობს."
+msgid "{n} message isn't moved: its mail server has moved or removed it since, or the folder it was to go to is gone or won't take it."
+msgid_plural "{n} messages aren't moved: their mail server has moved or removed them since, or the folders they were to go to are gone or won't take them."
+msgstr[0] "{n} წერილი არ გადაიტანება: ფოსტის სერვერმა ის მას შემდეგ გადაიტანა ან წაშალა, ან სამიზნე საქაღალდე აღარ არსებობს ან არ იღებს მას."
+msgstr[1] "{n} წერილი არ გადაიტანება: ფოსტის სერვერმა ისინი მას შემდეგ გადაიტანა ან წაშალა, ან სამიზნე საქაღალდეები აღარ არსებობს ან არ იღებენ მათ."
 
 #. android
 #: apps/mailcraft-android/app/src/main/kotlin/work/mailcraft/android/MailListScreen.kt

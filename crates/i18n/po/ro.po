@@ -144,8 +144,8 @@ msgstr "„{title}” este anulată, deci nu poate fi adăugată la selecție."
 #. what a command says
 #: crates/engine/src/undo.rs
 #, fuzzy
-msgid "'{subject}' isn't moved: its mail server has moved or removed it since, or the folder it was to go to is gone."
-msgstr "„{subject}” nu este mutat: serverul de e-mail l-a mutat sau l-a eliminat între timp, ori dosarul de destinație nu mai există."
+msgid "'{subject}' isn't moved: its mail server has moved or removed it since, or the folder it was to go to is gone or won't take it."
+msgstr "„{subject}” nu este mutat: serverul de e-mail l-a mutat sau l-a eliminat între timp, ori dosarul de destinație nu mai există sau nu îl acceptă."
 
 #. what a command says
 #: crates/engine/src/cmd/graph_send.rs
@@ -27419,11 +27419,11 @@ msgstr[2] "{n} de mesaje sunt deja aici și sunt omise"
 #. what a command says
 #: crates/engine/src/undo.rs
 #, fuzzy
-msgid "{n} message isn't moved: its mail server has moved or removed it since, or the folder it was to go to is gone."
-msgid_plural "{n} messages aren't moved: their mail server has moved or removed them since, or the folders they were to go to are gone."
-msgstr[0] "{n} mesaj nu este mutat: serverul de e-mail l-a mutat sau l-a eliminat între timp, ori dosarul de destinație nu mai există."
-msgstr[1] "{n} mesaje nu sunt mutate: serverul de e-mail le-a mutat sau le-a eliminat între timp, ori dosarele de destinație nu mai există."
-msgstr[2] "{n} de mesaje nu sunt mutate: serverul de e-mail le-a mutat sau le-a eliminat între timp, ori dosarele de destinație nu mai există."
+msgid "{n} message isn't moved: its mail server has moved or removed it since, or the folder it was to go to is gone or won't take it."
+msgid_plural "{n} messages aren't moved: their mail server has moved or removed them since, or the folders they were to go to are gone or won't take them."
+msgstr[0] "{n} mesaj nu este mutat: serverul de e-mail l-a mutat sau l-a eliminat între timp, ori dosarul de destinație nu mai există sau nu îl acceptă."
+msgstr[1] "{n} mesaje nu sunt mutate: serverul de e-mail le-a mutat sau le-a eliminat între timp, ori dosarele de destinație nu mai există sau nu le acceptă."
+msgstr[2] "{n} de mesaje nu sunt mutate: serverul de e-mail le-a mutat sau le-a eliminat între timp, ori dosarele de destinație nu mai există sau nu le acceptă."
 
 #. android
 #: apps/mailcraft-android/app/src/main/kotlin/work/mailcraft/android/MailListScreen.kt

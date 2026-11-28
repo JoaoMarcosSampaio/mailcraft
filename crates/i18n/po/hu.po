@@ -147,8 +147,8 @@ msgstr "„{title}” le van mondva, ezért nem adható hozzá a kijelöléshez.
 #. what a command says
 #: crates/engine/src/undo.rs
 #, fuzzy
-msgid "'{subject}' isn't moved: its mail server has moved or removed it since, or the folder it was to go to is gone."
-msgstr "A(z) „{subject}” nem kerül áthelyezésre: a levelezőkiszolgáló azóta áthelyezte vagy eltávolította, vagy a célmappa már nem létezik."
+msgid "'{subject}' isn't moved: its mail server has moved or removed it since, or the folder it was to go to is gone or won't take it."
+msgstr "A(z) „{subject}” nem kerül áthelyezésre: a levelezőkiszolgáló azóta áthelyezte vagy eltávolította, vagy a célmappa már nem létezik, vagy nem fogadja be."
 
 #. what a command says
 #: crates/engine/src/cmd/graph_send.rs
@@ -27272,10 +27272,10 @@ msgstr[1] "{n} üzenet már itt van, ezért kimaradt"
 #. what a command says
 #: crates/engine/src/undo.rs
 #, fuzzy
-msgid "{n} message isn't moved: its mail server has moved or removed it since, or the folder it was to go to is gone."
-msgid_plural "{n} messages aren't moved: their mail server has moved or removed them since, or the folders they were to go to are gone."
-msgstr[0] "{n} üzenet nem kerül áthelyezésre: a levelezőkiszolgáló azóta áthelyezte vagy eltávolította, vagy a célmappa már nem létezik."
-msgstr[1] "{n} üzenet nem kerül áthelyezésre: a levelezőkiszolgáló azóta áthelyezte vagy eltávolította őket, vagy a célmappák már nem léteznek."
+msgid "{n} message isn't moved: its mail server has moved or removed it since, or the folder it was to go to is gone or won't take it."
+msgid_plural "{n} messages aren't moved: their mail server has moved or removed them since, or the folders they were to go to are gone or won't take them."
+msgstr[0] "{n} üzenet nem kerül áthelyezésre: a levelezőkiszolgáló azóta áthelyezte vagy eltávolította, vagy a célmappa már nem létezik, vagy nem fogadja be."
+msgstr[1] "{n} üzenet nem kerül áthelyezésre: a levelezőkiszolgáló azóta áthelyezte vagy eltávolította őket, vagy a célmappák már nem léteznek, vagy nem fogadják be őket."
 
 #. android
 #: apps/mailcraft-android/app/src/main/kotlin/work/mailcraft/android/MailListScreen.kt

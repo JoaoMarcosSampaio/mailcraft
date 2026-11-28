@@ -144,8 +144,8 @@ msgstr "«{title}» è annullato, quindi non può essere aggiunto alla selezione
 #. what a command says
 #: crates/engine/src/undo.rs
 #, fuzzy
-msgid "'{subject}' isn't moved: its mail server has moved or removed it since, or the folder it was to go to is gone."
-msgstr "«{subject}» non viene spostato: il server di posta lo ha spostato o rimosso nel frattempo, oppure la cartella di destinazione non esiste più."
+msgid "'{subject}' isn't moved: its mail server has moved or removed it since, or the folder it was to go to is gone or won't take it."
+msgstr "«{subject}» non viene spostato: il server di posta lo ha spostato o rimosso nel frattempo, oppure la cartella di destinazione non esiste più o non lo accetta."
 
 #. what a command says
 #: crates/engine/src/cmd/graph_send.rs
@@ -27245,10 +27245,10 @@ msgstr[1] "{n} messaggi sono già qui e sono esclusi"
 #. what a command says
 #: crates/engine/src/undo.rs
 #, fuzzy
-msgid "{n} message isn't moved: its mail server has moved or removed it since, or the folder it was to go to is gone."
-msgid_plural "{n} messages aren't moved: their mail server has moved or removed them since, or the folders they were to go to are gone."
-msgstr[0] "{n} messaggio non viene spostato: il server di posta lo ha spostato o rimosso nel frattempo, oppure la cartella di destinazione non esiste più."
-msgstr[1] "{n} messaggi non vengono spostati: il server di posta li ha spostati o rimossi nel frattempo, oppure le cartelle di destinazione non esistono più."
+msgid "{n} message isn't moved: its mail server has moved or removed it since, or the folder it was to go to is gone or won't take it."
+msgid_plural "{n} messages aren't moved: their mail server has moved or removed them since, or the folders they were to go to are gone or won't take them."
+msgstr[0] "{n} messaggio non viene spostato: il server di posta lo ha spostato o rimosso nel frattempo, oppure la cartella di destinazione non esiste più o non lo accetta."
+msgstr[1] "{n} messaggi non vengono spostati: il server di posta li ha spostati o rimossi nel frattempo, oppure le cartelle di destinazione non esistono più o non li accettano."
 
 #. android
 #: apps/mailcraft-android/app/src/main/kotlin/work/mailcraft/android/MailListScreen.kt

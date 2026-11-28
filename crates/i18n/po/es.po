@@ -144,8 +144,8 @@ msgstr "«{title}» está cancelada, así que no se puede añadir a la selecció
 #. what a command says
 #: crates/engine/src/undo.rs
 #, fuzzy
-msgid "'{subject}' isn't moved: its mail server has moved or removed it since, or the folder it was to go to is gone."
-msgstr "«{subject}» no se mueve: su servidor de correo lo ha movido o eliminado desde entonces, o la carpeta de destino ya no existe."
+msgid "'{subject}' isn't moved: its mail server has moved or removed it since, or the folder it was to go to is gone or won't take it."
+msgstr "«{subject}» no se mueve: su servidor de correo lo ha movido o eliminado desde entonces, o la carpeta de destino ya no existe o no lo acepta."
 
 #. what a command says
 #: crates/engine/src/cmd/graph_send.rs
@@ -27270,10 +27270,10 @@ msgstr[1] "{n} mensajes ya están aquí y se excluyen"
 #. what a command says
 #: crates/engine/src/undo.rs
 #, fuzzy
-msgid "{n} message isn't moved: its mail server has moved or removed it since, or the folder it was to go to is gone."
-msgid_plural "{n} messages aren't moved: their mail server has moved or removed them since, or the folders they were to go to are gone."
-msgstr[0] "{n} mensaje no se mueve: su servidor de correo lo ha movido o eliminado desde entonces, o la carpeta de destino ya no existe."
-msgstr[1] "{n} mensajes no se mueven: su servidor de correo los ha movido o eliminado desde entonces, o las carpetas de destino ya no existen."
+msgid "{n} message isn't moved: its mail server has moved or removed it since, or the folder it was to go to is gone or won't take it."
+msgid_plural "{n} messages aren't moved: their mail server has moved or removed them since, or the folders they were to go to are gone or won't take them."
+msgstr[0] "{n} mensaje no se mueve: su servidor de correo lo ha movido o eliminado desde entonces, o la carpeta de destino ya no existe o no lo acepta."
+msgstr[1] "{n} mensajes no se mueven: su servidor de correo los ha movido o eliminado desde entonces, o las carpetas de destino ya no existen o no los aceptan."
 
 #. android
 #: apps/mailcraft-android/app/src/main/kotlin/work/mailcraft/android/MailListScreen.kt
