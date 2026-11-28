@@ -7,7 +7,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. why a mail server couldn't be used
 #: crates/proto/src/smtp.rs
@@ -1407,7 +1407,7 @@ msgstr "Todas as contas"
 #: crates/ui-egui/src/nav.rs
 #, fuzzy
 msgid "All Archives"
-msgstr "Todos os ficheiros"
+msgstr "Todos os arquivos"
 
 #. interface
 #: crates/ui-egui/src/scheduling.rs
@@ -23107,7 +23107,7 @@ msgstr "sinalizá-la para amanhã"
 #, fuzzy
 msgctxt "folder"
 msgid "Archive"
-msgstr "Ficheiro"
+msgstr "Arquivo"
 
 #. folder name
 #: crates/model/src/mailbox.rs
@@ -24116,7 +24116,7 @@ msgstr "passados"
 #: crates/ui-egui/src/forms.rs
 #, fuzzy
 msgid "personal"
-msgstr "personal"
+msgstr "pessoal"
 
 #. what a command says
 #: crates/engine/src/cmd/picture.rs crates/engine/src/cmd/signature.rs

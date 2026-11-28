@@ -35,6 +35,7 @@ class LanguagesTest {
         assertEquals("fr", chosenTag(listOf("fr-CA")))
         assertEquals("pt-BR", chosenTag(listOf("pt-BR", "es-MX", "fr")))
         assertEquals("pt-PT", chosenTag(listOf("pt-PT", "fr")))
+        assertEquals("pt-PT", chosenTag(listOf("pt-PT-u-ca-gregory", "fr")))
         assertEquals("es", chosenTag(listOf("ja", "es-MX", "fr")))
         assertEquals("", chosenTag(listOf("ja")))
         assertEquals("", chosenTag(listOf("")))

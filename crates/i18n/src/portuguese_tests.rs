@@ -40,17 +40,19 @@ fn european_portuguese_is_offered_by_its_own_name_and_chosen_for_portugal() {
 
 #[test]
 fn portuguese_has_two_plural_forms() {
-    let pt = Rule::from_header("nplurals=2; plural=(n > 1);");
-    assert_eq!(pt, Rule::AboveOne);
-    assert_eq!(pt.index(1), 0);
-    assert_eq!(pt.index(0), 0);
-    assert_eq!(pt.index(2), 1);
-    assert_eq!(pt.forms(), 2);
-    for lang in [Lang::PortugueseBrazil, Lang::PortuguesePortugal] {
-        assert_eq!(lang.tn(1, "{n} message", "{n} messages"), "{n} mensagem", "{lang:?}");
-        assert_eq!(lang.tn(0, "{n} message", "{n} messages"), "{n} mensagem", "{lang:?}");
-        assert_eq!(lang.tn(2, "{n} message", "{n} messages"), "{n} mensagens", "{lang:?}");
-    }
+    let br = Rule::from_header("nplurals=2; plural=(n > 1);");
+    assert_eq!(br, Rule::AboveOne);
+    assert_eq!((br.index(0), br.index(1), br.index(2), br.forms()), (0, 0, 1, 2));
+    assert_eq!(Lang::PortugueseBrazil.tn(0, "{n} message", "{n} messages"), "{n} mensagem");
+    assert_eq!(Lang::PortugueseBrazil.tn(1, "{n} message", "{n} messages"), "{n} mensagem");
+    assert_eq!(Lang::PortugueseBrazil.tn(2, "{n} message", "{n} messages"), "{n} mensagens");
+
+    let pt = Rule::from_header("nplurals=2; plural=(n != 1);");
+    assert_eq!(pt, Rule::NotOne);
+    assert_eq!((pt.index(0), pt.index(1), pt.index(2), pt.forms()), (1, 0, 1, 2));
+    assert_eq!(Lang::PortuguesePortugal.tn(0, "{n} message", "{n} messages"), "{n} mensagens");
+    assert_eq!(Lang::PortuguesePortugal.tn(1, "{n} message", "{n} messages"), "{n} mensagem");
+    assert_eq!(Lang::PortuguesePortugal.tn(2, "{n} message", "{n} messages"), "{n} mensagens");
 }
 
 #[test]

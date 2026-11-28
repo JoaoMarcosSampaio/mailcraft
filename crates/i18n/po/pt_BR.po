@@ -24116,7 +24116,7 @@ msgstr "passados"
 #: crates/ui-egui/src/forms.rs
 #, fuzzy
 msgid "personal"
-msgstr "personal"
+msgstr "pessoal"
 
 #. what a command says
 #: crates/engine/src/cmd/picture.rs crates/engine/src/cmd/signature.rs

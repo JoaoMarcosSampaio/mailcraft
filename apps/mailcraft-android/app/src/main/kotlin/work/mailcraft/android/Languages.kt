@@ -47,9 +47,14 @@ internal fun chosenTag(applicationLocales: List<String>): String =
     applicationLocales.firstNotNullOfOrNull { tag ->
         val full = tag.lowercase(java.util.Locale.ROOT).replace('_', '-')
         val code = full.substringBefore('-')
-        // An exact tag first (`pt-PT`, `pt-BR`), then the language alone (bare `pt` is `pt-BR`).
-        LANGUAGES.firstOrNull { it.tag.lowercase(java.util.Locale.ROOT) == full }?.tag
-            ?: if (code == "pt") "pt-BR" else LANGUAGES.firstOrNull { it.tag == code }?.tag
+        // Portugal's Portuguese first (including subtags like `pt-PT-u-ca-gregory`), then an exact
+        // tag, then the language alone (bare `pt` is `pt-BR`).
+        if (full == "pt-pt" || full.startsWith("pt-pt-")) {
+            "pt-PT"
+        } else {
+            LANGUAGES.firstOrNull { it.tag.lowercase(java.util.Locale.ROOT) == full }?.tag
+                ?: if (code == "pt") "pt-BR" else LANGUAGES.firstOrNull { it.tag == code }?.tag
+        }
     }.orEmpty()
 
 /**
