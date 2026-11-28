@@ -10897,7 +10897,7 @@ msgstr "Próxima semana"
 #: crates/ui-egui/src/merge_contacts.rs
 #, fuzzy
 msgid "Nickname"
-msgstr "Apelido"
+msgstr "Alcunha"
 
 #. interface
 #: crates/ui-egui/src/advanced_search.rs crates/ui-egui/src/updates.rs
@@ -19493,7 +19493,7 @@ msgstr "A janela ainda não está pronta."
 #: crates/ui-egui/src/dialogs.rs
 #, fuzzy
 msgid "The {n} shared mailboxes opened through it are removed from this device too."
-msgstr "A {n} caixa partilhada aberta por ela também é removida deste dispositivo."
+msgstr "As caixas partilhadas ({n}) abertas através dela também são removidas deste dispositivo."
 
 #. interface
 #: crates/ui-egui/src/merge_contacts.rs
@@ -27892,7 +27892,7 @@ msgstr[1] "{n} não lidas no servidor"
 msgid "{n} unsubscribes on its own page: open its message to do it there."
 msgid_plural "{n} unsubscribe on their own page: open each of those messages to do it there."
 msgstr[0] "{n} cancela assinatura na própria página: abra a mensagem para fazer lá."
-msgstr[1] "{n} cancela assinatura na própria página: abra a mensagem para fazer lá."
+msgstr[1] "{n} cancelam assinatura na própria página: abra cada uma dessas mensagens para fazer lá."
 
 #. interface
 #: crates/ui-egui/src/import_pst.rs

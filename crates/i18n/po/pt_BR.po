@@ -11335,7 +11335,7 @@ msgstr "Conta inexistente"
 #: apps/mailcraft-android/app/src/main/kotlin/work/mailcraft/android/TodayScreen.kt
 #, fuzzy
 msgid "No tasks due."
-msgstr "Nenhuma tarefa vencida."
+msgstr "Nenhuma tarefa pendente."
 
 #. android
 #: apps/mailcraft-android/app/src/main/kotlin/work/mailcraft/android/TasksScreen.kt
@@ -21411,7 +21411,7 @@ msgstr "Usar configuração do sistema"
 #: crates/ui-egui/src/backstage.rs
 #, fuzzy
 msgid "Use system setting follows Animation effects in Windows' settings. Where MailCraft can't read the system's setting yet, animations play until you choose Never play."
-msgstr "Usar configuração do sistema segue Efeitos de animação nas configurações do Windows. Onde o MailCraft ainda não lê a configuração do sistema, as animações tocam até você escolher Nunca tocar."
+msgstr "Usar configuração do sistema segue Efeitos de animação nas configurações do Windows. Onde o MailCraft ainda não lê a configuração do sistema, as animações tocam até você escolher Nunca reproduzir."
 
 #. interface
 #: crates/ui-egui/src/account_setup.rs
@@ -26952,7 +26952,7 @@ msgstr[1] "{n} corpos ou anexos estão ausentes da pasta de conteúdo da caixa d
 msgid "{n} by a message from your account through your Outbox:"
 msgid_plural "{n} by a message each from your account through your Outbox:"
 msgstr[0] "{n} por uma mensagem da sua conta pela Caixa de Saída:"
-msgstr[1] "{n} por uma mensagem da sua conta pela Caixa de Saída:"
+msgstr[1] "{n} por uma mensagem cada da sua conta pela Caixa de Saída:"
 
 #. what a command says
 #: crates/model/src/message.rs
