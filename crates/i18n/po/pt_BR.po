@@ -19679,7 +19679,7 @@ msgstr "A janela ainda não está pronta."
 #: crates/ui-egui/src/dialogs.rs
 #, fuzzy
 msgid "The {n} shared mailboxes opened through it are removed from this device too."
-msgstr "A {n} caixa compartilhada aberta por ela também é removida deste dispositivo."
+msgstr "As caixas compartilhadas ({n}) abertas por ela também são removidas deste dispositivo."
 
 #. interface
 #: crates/ui-egui/src/merge_contacts.rs
@@ -27801,8 +27801,8 @@ msgstr[1] "{n} mensagens novas"
 #, fuzzy
 msgid "{n} new message, {sent} sent"
 msgid_plural "{n} new messages, {sent} sent"
-msgstr[0] "{n} mensagem nova, {sent} enviada"
-msgstr[1] "{n} mensagens novas, {sent} enviadas"
+msgstr[0] "{n} mensagem nova, enviadas: {sent}"
+msgstr[1] "{n} mensagens novas, enviadas: {sent}"
 
 #. interface
 #: crates/ui-egui/src/meeting_dialogs/share.rs
@@ -28090,7 +28090,7 @@ msgstr[1] "{n} não lidas no servidor"
 msgid "{n} unsubscribes on its own page: open its message to do it there."
 msgid_plural "{n} unsubscribe on their own page: open each of those messages to do it there."
 msgstr[0] "{n} cancela assinatura na própria página: abra a mensagem para fazer lá."
-msgstr[1] "{n} cancela assinatura na própria página: abra a mensagem para fazer lá."
+msgstr[1] "{n} cancelam assinatura na própria página: abra cada uma dessas mensagens para fazer lá."
 
 #. interface
 #: crates/ui-egui/src/import_pst.rs

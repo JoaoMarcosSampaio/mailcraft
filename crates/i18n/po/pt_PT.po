@@ -18117,9 +18117,9 @@ msgid ""
 "\n"
 "Hide the copy under Shared Calendars? The shared mailbox's own calendar stays, and lets you change events, answer meeting requests and send from the mailbox where you may. Nothing on the server changes: right-click the shared mailbox's calendar to show the copy again."
 msgstr ""
-"O calendário da caixa compartilhada {address} é mostrado duas vezes: em Meus Calendários com a caixa compartilhada, e em Calendários Compartilhados como \"{name}\", porque também foi compartilhado consigo e aceito.\n"
+"O calendário da caixa partilhada {address} é mostrado duas vezes: em Meus Calendários com a caixa partilhada, e em Calendários Partilhados como \"{name}\", porque também foi partilhado consigo e aceite.\n"
 "\n"
-"Ocultar a cópia em Calendários Compartilhados? O calendário próprio da caixa compartilhada permanece, e deixa alterar eventos, responder a pedidos de reunião e enviar da caixa onde puder. Nada no servidor muda: clique com o botão direito no calendário da caixa compartilhada para mostrar a cópia de novo."
+"Ocultar a cópia em Calendários Partilhados? O calendário próprio da caixa partilhada permanece, e deixa alterar eventos, responder a pedidos de reunião e enviar da caixa onde puder. Nada no servidor muda: clique com o botão direito no calendário da caixa partilhada para mostrar a cópia de novo."
 
 #. interface
 #: crates/ui-egui/src/dialogs.rs
@@ -21597,7 +21597,7 @@ msgstr "Usar definição do sistema"
 #: crates/ui-egui/src/backstage.rs
 #, fuzzy
 msgid "Use system setting follows Animation effects in Windows' settings. Where MailCraft can't read the system's setting yet, animations play until you choose Never play."
-msgstr "Usar definição do sistema segue Efeitos de animação nas definições do Windows. Onde o MailCraft ainda não lê a definição do sistema, as animações tocam até escolher Nunca tocar."
+msgstr "Usar definição do sistema segue Efeitos de animação nas definições do Windows. Onde o MailCraft ainda não lê a definição do sistema, as animações tocam até escolher Nunca reproduzir."
 
 #. interface
 #: crates/ui-egui/src/account_setup.rs
@@ -27212,7 +27212,7 @@ msgstr[1] "{n} alterações esperando o servidor IMAP não chegarão a ele; fica
 #: crates/engine/src/sync_driver/calendar_plan.rs
 #, fuzzy
 msgid "{n} changes to the calendar \"{name}\" are held here, not sent: this account may no longer change it. They are sent if it may again."
-msgstr "{n} alteração no calendário \"{name}\" fica aqui, não enviada: esta conta pode não poder mais alterá-lo. É enviada se puder de novo."
+msgstr "Alterações no calendário \"{name}\" ({n}) ficam retidas aqui, sem envio: esta conta pode já não poder alterá-lo. Serão enviadas se voltar a poder."
 
 #. interface
 #: crates/ui-egui/src/backstage.rs crates/ui-egui/src/chrome.rs crates/ui-egui/src/import_pst.rs crates/ui-egui/src/lib.rs
