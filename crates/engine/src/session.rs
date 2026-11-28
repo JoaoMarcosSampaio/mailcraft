@@ -732,6 +732,9 @@ pub(crate) struct SubjectEdits {
 #[derive(Clone, Debug, Default, PartialEq, Eq, Serialize, Deserialize)]
 #[serde(default, rename_all = "camelCase")]
 pub struct Compose {
+    /// A local signature file could not be read; the normal signature was used instead.
+    #[serde(skip)]
+    pub signature_file_warning: String,
     pub mode: ComposeMode,
     /// The message replied to or forwarded.
     pub source: Option<Id>,
@@ -831,6 +834,13 @@ pub(crate) enum Saving {
 }
 
 impl Compose {
+    /// Pictures still referenced by the text, including signature pictures; deleted pictures
+    /// retained only for Undo do not count.
+    pub fn has_pictures(&self) -> bool {
+        let held = self.body.text().pictures();
+        self.pictures.iter().any(|p| held.contains(&p.id)) || self.signature.as_ref().is_some_and(|s| s.pictures.iter().any(|p| held.contains(&p.id)))
+    }
+
     /// Whether the signature in the message is still the one that went in.
     pub fn signature_unedited(&self) -> bool {
         self.signature.as_ref().is_some_and(|inserted| self.body.text().signature().as_ref() == Some(&inserted.text))
@@ -1163,6 +1173,8 @@ pub struct Clock {
 
 #[derive(Clone)]
 pub(crate) struct Undo {
+    /// Stable identity shared with a host's local sidecar across Undo and Redo.
+    token: Arc<()>,
     label: &'static str,
     pub(crate) mailbox: Mailbox,
     /// What the step did to the Microsoft accounts' mail, for keeping them in step when it is
@@ -1176,6 +1188,10 @@ pub(crate) struct Undo {
 }
 
 pub struct Session {
+    /// Trusted host settings only, never loaded from a mailbox or exposed as command parameters.
+    /// Called afresh when a message chooses its account's default signature.
+    pub signature_file: Option<Box<dyn Fn(&str) -> Result<Option<mailcraft_model::Signature>, String> + Send + Sync>>,
+    pub(crate) signature_file_warning: std::sync::Mutex<Option<String>>,
     pub mailbox: Mailbox,
     pub view: ViewState,
     pub sel: Selection,
@@ -1413,6 +1429,10 @@ pub struct Session {
     /// with what its `@media` hid there left out. A message not read there is quoted with only
     /// what every pane would show of it.
     read_at: HashMap<(Id, ReadIn), (mailcraft_html::Env, bool, u64)>,
+    /// The messages whose drawn pictures were looked for ([`Session::note_drawn`]): forgotten
+    /// when an Undo or Redo may put back a message from before it, and with another mailbox.
+    // lean: one id per message opened; a cap if a session ever opens millions.
+    drawn_checked: HashSet<Id>,
     /// How many times [`Session::read_at`] was told something: the age of what it keeps.
     read_count: u64,
     /// The word index of the mailbox file, while [`Session::index_words`] is on and the mailbox
@@ -1477,6 +1497,12 @@ impl Session {
     /// it had HTML to choose from).
     pub fn read_at(&mut self, id: Id, place: ReadIn, env: mailcraft_html::Env, as_text: bool) {
         self.read_count = self.read_count.saturating_add(1);
+        // The pictures its body draws are the body's (looked for once: [`Session::note_drawn`]).
+        if !self.drawn_checked.contains(&id)
+            && let Some(m) = self.mailbox.messages.get(&id).cloned()
+        {
+            self.note_drawn(id, &m);
+        }
         if self.read_at.len() >= MAX_READ_AT && !self.read_at.contains_key(&(id, place)) {
             // lean: a walk of the 1024 at the cap; an ordered map if it is ever felt.
             if let Some(oldest) = self.read_at.iter().min_by_key(|(_, r)| r.2).map(|(k, _)| *k) {
@@ -1484,6 +1510,43 @@ impl Session {
             }
         }
         self.read_at.insert((id, place), (env, as_text, self.read_count));
+    }
+
+    /// Mark inline the parts of message `id` that its HTML draws, as `seen` (the message with its
+    /// body in memory) has it ([`mailcraft_mime_model::drawn_parts`]): for a message read in
+    /// before that was told (#1970), so that its signature pictures are no longer attachments,
+    /// here or in the list, with its body on disk too. Outside the history: nothing the owner did.
+    ///
+    /// Looked for once per message with its HTML at hand ([`Session::drawn_checked`]). The
+    /// message list and the counts stand through it, as through a read mark: a mark changes
+    /// nothing the list is built from, unless it lists by attachments or searches.
+    pub fn note_drawn(&mut self, id: Id, seen: &Message) {
+        let Some(html) = seen.body.html.as_deref() else { return };
+        if self.drawn_checked.contains(&id) {
+            return;
+        }
+        self.drawn_checked.insert(id);
+        let Some(m) = self.mailbox.messages.get(&id).filter(|m| !m.draft && m.attachments.iter().any(|a| !a.inline && !a.content_id.is_empty()))
+        else {
+            return;
+        };
+        let drawn = mailcraft_mime_model::drawn_parts(html, &m.attachments);
+        if drawn.iter().all(|i| m.attachments.get(*i).is_none_or(|a| a.inline)) {
+            return;
+        }
+        let mut copy = Message::clone(m);
+        mailcraft_mime_model::mark_parts(&mut copy.attachments, &drawn);
+        let stands = self.view.filter == Filter::All
+            && mailcraft_model::search::Query::parse(&self.view.search).is_empty()
+            && self.list_cache.as_ref().is_some_and(|c| c.key == self.list_key());
+        let counts_before = self.counts_cache.as_ref().map(|(_, counts)| counts.clone());
+        let rev_before = self.rev;
+        self.put_message(id, copy);
+        self.rev += 1;
+        self.dirty = true;
+        if stands {
+            self.keep_through_read_marks(&[], rev_before, counts_before);
+        }
     }
 
     /// How message `id` was last read in each place it is remembered in ([`Session::read_as`]).
@@ -1508,6 +1571,8 @@ impl Session {
     /// mailbox is looked at: what zone its times are in is settled by it, [`Session::settle_zone`].)
     pub fn with_clock(mailbox: Mailbox, clock: Clock) -> Self {
         let mut s = Session {
+            signature_file: None,
+            signature_file_warning: Default::default(),
             mailbox,
             view: ViewState::default(),
             sel: Selection::default(),
@@ -1587,6 +1652,7 @@ impl Session {
             dav_seen: Default::default(),
             dav_generation: Default::default(),
             read_at: HashMap::new(),
+            drawn_checked: HashSet::new(),
             read_count: 0,
             #[cfg(not(target_arch = "wasm32"))]
             words: None,
@@ -2598,6 +2664,21 @@ impl Session {
         Ok(Arc::new(copy))
     }
 
+    /// [`Session::loaded_message`] as it is written as an Internet message (an export, a copy put
+    /// on a server). Mail not split with its hops kept ([`Message::hops_kept`], #2059) leaves its
+    /// verdicts and Exchange's stamps behind, as a copy put on another server does: its block may
+    /// be one lost (unreadable, read as none, or split again without it) with the server's hop
+    /// in it, and read back as fresh mail its verdicts would stand above a sender's hop.
+    pub(crate) fn loaded_to_write(&self, id: Id) -> Result<Arc<Message>, CmdError> {
+        let m = self.loaded_message(id)?;
+        if m.hops_kept {
+            return Ok(m);
+        }
+        let mut copy = Message::clone(&m);
+        mailcraft_model::auth_results::forget_stamps(&mut copy);
+        Ok(Arc::new(copy))
+    }
+
     /// Whether every part of `m` can be read here: what is in memory, and what the mailbox keeps
     /// outside it read back whole (checked against its length and SHA-256). The server's copy of
     /// a message moved to this computer goes only then (#451): a body or a file whose content
@@ -2644,14 +2725,14 @@ impl Session {
         m.attachments.iter().filter_map(|a| a.kept.filter(|_| a.data.is_empty())).chain(original).all(|r| self.fetch(&r).is_ok())
     }
 
-    /// What a copy of `m` put on another server is made of ([`Session::loaded_message`]), or
+    /// What a copy of `m` put on another server is made of ([`Session::loaded_to_write`]), or
     /// `None` while it waits: the bytes a protected message came as (#30) couldn't be read in that
     /// one read, and the copy it is being moved out of may hold them
     /// ([`crate::cmd::mail::check_again::source_may_hold`]). That copy is asked for them first
     /// ([`Session::ask_for_lost_originals`]), and goes only once nothing can be lost with it:
     /// made of its parts the copy would be taken for the message.
     pub(crate) fn placeable(&self, m: &Message) -> Result<Option<Arc<Message>>, CmdError> {
-        let whole = self.loaded_message(m.id)?;
+        let whole = self.loaded_to_write(m.id)?;
         let fell_back = m.original.is_some() && whole.original.is_none();
         Ok((!fell_back || !crate::cmd::mail::check_again::source_may_hold(&self.mailbox, m.id)).then_some(whole))
     }
@@ -3525,6 +3606,8 @@ impl Session {
     pub fn replace_mailbox(&mut self, mailbox: Mailbox) {
         self.mailbox = mailbox;
         self.resident.clear();
+        // (Its messages are looked at for the first time, whatever their ids.)
+        self.drawn_checked.clear();
         self.resident_bytes = 0;
         self.display_failed.clear();
         self.search_pass = None;
@@ -3581,13 +3664,29 @@ impl Session {
     // ---- undo ----
 
     fn snapshot(&self, label: &'static str) -> Undo {
-        Undo { label, mailbox: self.mailbox.clone(), touched: Default::default(), sel: self.sel.clone(), folder: self.view.folder, mail: false }
+        Undo {
+            token: Arc::new(()),
+            label,
+            mailbox: self.mailbox.clone(),
+            touched: Default::default(),
+            sel: self.sel.clone(),
+            folder: self.view.folder,
+            mail: false,
+        }
     }
 
     /// [`Session::snapshot`] without the mailbox, for a command that doesn't change it
     /// ([`Session::run`]): never kept as a step of the history.
     fn snapshot_light(&self, label: &'static str) -> Undo {
-        Undo { label, mailbox: Mailbox::default(), touched: Default::default(), sel: self.sel.clone(), folder: self.view.folder, mail: false }
+        Undo {
+            token: Arc::new(()),
+            label,
+            mailbox: Mailbox::default(),
+            touched: Default::default(),
+            sel: self.sel.clone(),
+            folder: self.view.folder,
+            mail: false,
+        }
     }
 
     /// A .pst import that came in a batch at a time, kept as one step to undo: the mailbox as it
@@ -3723,6 +3822,12 @@ impl Session {
         self.steps_moved
     }
 
+    /// Identity of the next step, for host-local settings that must follow that operation.
+    /// A weak reference expires when the step leaves both stacks; no mailbox data is exposed.
+    pub fn undo_token(&self, redo: bool) -> Option<std::sync::Weak<()>> {
+        (if redo { &self.redo } else { &self.history }).last().map(|u| Arc::downgrade(&u.token))
+    }
+
     /// What the last undo or redo couldn't do, in words (empty when it did everything).
     pub fn undo_said(&self) -> &[String] {
         &self.undo_said
@@ -3835,7 +3940,15 @@ impl Session {
         self.ews_run_cut.clear();
         self.run_had.clear();
         let mail = u.mail;
-        let cur = Undo { label: u.label, mailbox: now, touched, sel: std::mem::replace(&mut self.sel, u.sel), folder: self.view.folder, mail };
+        let cur = Undo {
+            token: u.token,
+            label: u.label,
+            mailbox: now,
+            touched,
+            sel: std::mem::replace(&mut self.sel, u.sel),
+            folder: self.view.folder,
+            mail,
+        };
         self.rev += 1;
         self.restored = self.restored.wrapping_add(1);
         self.dirty = true;
@@ -4410,6 +4523,10 @@ impl Session {
         // what it changed, [`FolderCounts::apply`](crate::counts::FolderCounts::apply).)
         // (Undo and Redo bring the counts in step with what they put back themselves, [`Session::swap`].)
         let steps = matches!(id, "edit.undo" | "edit.redo");
+        if steps {
+            // A message put back as it was before its pictures were told is told again.
+            self.drawn_checked.clear();
+        }
         let counts_aside = if spec.mutates && !steps { self.counts_cache.take() } else { None };
         // How many messages the command finds, beside the revision the counts are keyed by
         // ([`Session::counts_through`]); no copy of the mailbox is needed for it.
