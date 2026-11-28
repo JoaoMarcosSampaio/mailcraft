@@ -29,6 +29,12 @@ internal val LANGUAGES: List<LanguageOption> = listOf(
     LanguageOption("pt-PT", "Português (Portugal)"),
 )
 
+private fun isPortugalPortuguese(normalizedTag: String): Boolean {
+    val parts = normalizedTag.split('-')
+    if (parts.firstOrNull() != "pt") return false
+    return parts.drop(1).takeWhile { it.length > 1 }.any { it == "pt" }
+}
+
 /**
  * The language the core is to speak for a locale's language code: one the app offers, or English.
  * (The system has already put the owner's own choice, or its own language, into the configuration.)
@@ -36,7 +42,7 @@ internal val LANGUAGES: List<LanguageOption> = listOf(
 internal fun coreLanguage(language: String?): String {
     val tag = language?.lowercase(java.util.Locale.ROOT)?.replace('_', '-')
     // Portugal's Portuguese has a catalogue of its own; any other Portuguese is the Brazilian one.
-    if (tag == "pt-pt" || tag?.startsWith("pt-pt-") == true) return "pt-PT"
+    if (tag != null && isPortugalPortuguese(tag)) return "pt-PT"
     val code = tag?.substringBefore('-')
     if (code == "pt") return "pt-BR"
     return LANGUAGES.firstOrNull { it.tag == code }?.tag ?: LANGUAGES.first().tag
@@ -47,9 +53,9 @@ internal fun chosenTag(applicationLocales: List<String>): String =
     applicationLocales.firstNotNullOfOrNull { tag ->
         val full = tag.lowercase(java.util.Locale.ROOT).replace('_', '-')
         val code = full.substringBefore('-')
-        // Portugal's Portuguese first (including subtags like `pt-PT-u-ca-gregory`), then an exact
-        // tag, then the language alone (bare `pt` is `pt-BR`).
-        if (full == "pt-pt" || full.startsWith("pt-pt-")) {
+        // Portugal's Portuguese first (including script/extension subtags), then an exact tag,
+        // then the language alone (bare `pt` is `pt-BR`).
+        if (isPortugalPortuguese(full)) {
             "pt-PT"
         } else {
             LANGUAGES.firstOrNull { it.tag.lowercase(java.util.Locale.ROOT) == full }?.tag
