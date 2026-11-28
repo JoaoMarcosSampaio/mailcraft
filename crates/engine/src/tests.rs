@@ -3412,6 +3412,10 @@ fn a_path_labelled_folder_moves_into_its_parent_under_its_leaf_when_the_label_is
     for name in ["Other.Acme", "Other.Beta", "Beta"] {
         s.mailbox.add_folder(account, Some(other), name).unwrap();
     }
+    // Top-level folders of the leaf names too: only the names under the parent count.
+    for name in ["Acme", "Acme (2)"] {
+        s.mailbox.add_folder(account, None, name).unwrap();
+    }
 
     let mut tree = vec![listed("Other", "", "Other")];
     tree.extend(orphans);

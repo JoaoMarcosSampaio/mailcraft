@@ -2244,21 +2244,12 @@ fn is_numbered(name: &str, base: &str) -> bool {
 /// the names under `parent`, lowered). The name it was given, or `None` with the folder left
 /// as it was.
 fn move_under_leaf(mb: &mut Mailbox, id: Id, parent: Id, leaf: &str, taken: &HashSet<String>) -> Option<String> {
-    let before = mb.folder(id)?.name.clone();
     let leaf = clean_name(leaf).filter(|name| !name.contains('/'))?;
     for n in 1..=MAX_NUMBERED {
         let name = clean_name(&numbered(&leaf, n))?;
-        // Taken under the parent, or (refused by the rename) where the folder is now.
-        if taken.contains(&name.to_lowercase()) || mb.rename_folder(id, &name).is_err() {
-            continue;
-        }
-        if mb.move_folder(id, Some(parent)).is_ok() {
+        if !taken.contains(&name.to_lowercase()) && mb.move_folder_as(id, Some(parent), Some(&name)).is_ok() {
             return Some(name);
         }
-        // Not for its name, then: it stays where and as it was. Its own name of a moment ago
-        // is still free beside it.
-        let _ = mb.rename_folder(id, &before);
-        return None;
     }
     None
 }
